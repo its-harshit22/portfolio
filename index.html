@@ -6,6 +6,7 @@
 <title>Harshit Kushwah | C++ Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,96 +14,96 @@
 
 <header class="main-header">
     <h1>Harshit Kushwah</h1>
-    <p>C++ Developer | Data Structures & Algorithms | Problem Solver</p>
-    
+    <p><span id="typing"></span></p>
+
+    <img src="Harshit (2).jpeg" class="profile-img">
+
     <div>
         <a href="#projects" class="btn">Projects</a>
-        <a href="resume.pdf" class="btn" download>Download Resume</a>
+        <a href="resume.pdf" class="btn" download>Resume</a>
     </div>
-
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#dsa">DSA</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
 </header>
 
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a Computer Science student with strong expertise in C++ and Data Structures & Algorithms.
-            I enjoy solving complex problems and building efficient systems. 
-            I have experience in web development and cloud technologies, and I am actively preparing for software development roles.
-        </p>
+<nav class="nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#dsa">DSA</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science student with strong expertise in C++ and Data Structures & Algorithms.
+        I enjoy solving complex problems and building efficient systems.
+    </p>
+</section>
+
+<section id="skills" class="section" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <span>C++</span>
+        <span>Data Structures</span>
+        <span>Algorithms</span>
+        <span>Java</span>
+        <span>JavaScript</span>
+        <span>Cloud</span>
     </div>
 </section>
 
-<section id="skills" class="section">
-    <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <span>C++</span>
-            <span>Data Structures</span>
-            <span>Algorithms</span>
-            <span>Java</span>
-            <span>Web Development</span>
-            <span>Cloud Basics</span>
+<section id="projects" class="section" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img src="Gemini_Generated_Image_slbpzfslbpzfslbp.png">
+            <h3>Library Management System</h3>
+            <p>Full-stack system with authentication & database integration.</p>
+            <a href="https://library-app-z3lk.onrender.com/" target="_blank">Live</a>
         </div>
-    </div>
-</section>
 
-<section id="projects" class="section">
-    <div class="container">
-        <h2>Projects</h2>
-        <div class="project-grid">
-
-            <div class="project-card">
-                <h3>Library Management System</h3>
-                <p>Built a full-stack system for managing books and users with authentication and database integration.</p>
-                <a href="https://library-app-z3lk.onrender.com/" target="_blank">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Chatbot Application</h3>
-                <p>Developed an interactive chatbot using JavaScript for real-time conversation handling.</p>
-                <a href="https://its-harshit22.github.io/ChatBot/" target="_blank">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Notes App</h3>
-                <p>Created a local storage-based notes app for efficient data saving and retrieval.</p>
-                <a href="https://its-harshit22.github.io/NotesMake/" target="_blank">View Project</a>
-            </div>
-
+        <div class="project-card">
+            <img src="ChatbotPaper.webp">
+            <h3>Chatbot</h3>
+            <p>Interactive chatbot using JavaScript.</p>
+            <a href="https://its-harshit22.github.io/ChatBot/" target="_blank">Live</a>
         </div>
+
+        <div class="project-card">
+            <img src="notes.png">
+            <h3>Notes App</h3>
+            <p>Local storage-based notes system.</p>
+            <a href="https://its-harshit22.github.io/NotesMake/" target="_blank">Live</a>
+        </div>
+
     </div>
 </section>
 
-<section id="dsa" class="section">
-    <div class="container">
-        <h2>Problem Solving</h2>
-        <p>Solved 300+ problems on LeetCode covering Arrays, DP, Graphs.</p>
-        <a href="https://leetcode.com/u/harshit-kushwah/" target="_blank" class="btn">View LeetCode</a>
-    </div>
+<section id="dsa" class="section" data-aos="fade-up">
+    <h2>Problem Solving</h2>
+    <p>300+ problems solved on LeetCode covering Arrays, DP, Graphs, Trees.</p>
+    <a href="https://leetcode.com/u/harshit-kushwah/" target="_blank" class="btn">LeetCode</a>
 </section>
 
-<section id="contact" class="section contact-section">
-    <div class="container">
-        <h2>Contact</h2>
-        <p>Email: harshit@example.com</p>
-        <p>
-            <a href="https://github.com/its-harshit22" target="_blank">GitHub</a> |
-            <a href="https://leetcode.com/u/harshit-kushwah/" target="_blank">LeetCode</a>
-        </p>
-    </div>
+<section class="section" data-aos="fade-up">
+    <h2>Featured Project</h2>
+    <p>🚀 Mini STL Library in C++ (In Progress)</p>
 </section>
 
-<footer class="footer">
-    <p>© 2026 Harshit Kushwah. All Rights Reserved.</p>
+<section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: your-email@gmail.com</p>
+    <p>
+        <a href="https://github.com/its-harshit22" target="_blank">GitHub</a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Harshit Kushwah</p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
