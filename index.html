@@ -1,169 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio website of Harshit Kushwah">
-    <title>Harshit Kushwah | Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        .hero-section {
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .hero-section h1 {
-            font-size: 3rem;
-        }
-        .hero-section p {
-            font-size: 1.2rem;
-        }
-        .card img {
-            height: 200px;
-            object-fit: cover;
-        }
-        footer {
-            background: #343a40;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshit Kushwah | C++ Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Harshit Kushwah</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>Hi, I'm Harshit Kushwah</h1>
-            <p>Aspiring Cloud Engineer | Web Developer | Sports Enthusiast</p>
-            <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="Harshit (2).jpeg" alt="About Me" class="img-fluid rounded">
-                </div>
-                <div class="col-md-6">
-                    <h2>About Me</h2>
-                    <p>I'm a third-year engineering student passionate about technology and innovation. With experience in web development, cloud computing, and project management, I aim to build solutions that make a difference. My journey includes milestones like being a Google Cloud Computing Co-Lead and contributing to hackathons and academic projects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center">Projects</h2>
-            <div class="row mt-4">
-                
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="Gemini_Generated_Image_slbpzfslbpzfslbp.png" class="card-img-top" alt="Project 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Let's Learn</h5>
-                            <p class="card-text">Your smart Library Management System for easy book and user handling.</p>
-                            <a href="https://library-app-z3lk.onrender.com/" class="btn btn-primary" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="ChatbotPaper.webp" class="card-img-top" alt="Project 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Let's Chat</h5>
-                            <p class="card-text">Where conversations come alive.</p>
-                            <a href="https://its-harshit22.github.io/ChatBot/" class="btn btn-primary" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Notes App Project -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="notes.png" class="card-img-top" alt="Notes App">
-                    <div class="card-body">
-                        <h5 class="card-title">Notes App</h5>
-                        <p class="card-text">A simple notes-taking web app with local storage.</p>
-                        <a href="https://its-harshit22.github.io/NotesMake/" class="btn btn-primary" target="_blank">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-        </div>
-    </section>
+<header class="main-header">
+    <h1>Harshit Kushwah</h1>
+    <p>C++ Developer | Data Structures & Algorithms | Problem Solver</p>
     
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Contact Me</h2>
-            <form action="https://formspree.io/f/xdkkkqqj" method="POST">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-            
-        </div>
-    </section>
+    <div>
+        <a href="#projects" class="btn">Projects</a>
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Harshit Kushwah. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#dsa">DSA</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</header>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<section id="about" class="section">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            I am a Computer Science student with strong expertise in C++ and Data Structures & Algorithms.
+            I enjoy solving complex problems and building efficient systems. 
+            I have experience in web development and cloud technologies, and I am actively preparing for software development roles.
+        </p>
+    </div>
+</section>
+
+<section id="skills" class="section">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <span>C++</span>
+            <span>Data Structures</span>
+            <span>Algorithms</span>
+            <span>Java</span>
+            <span>Web Development</span>
+            <span>Cloud Basics</span>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <h3>Library Management System</h3>
+                <p>Built a full-stack system for managing books and users with authentication and database integration.</p>
+                <a href="https://library-app-z3lk.onrender.com/" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Chatbot Application</h3>
+                <p>Developed an interactive chatbot using JavaScript for real-time conversation handling.</p>
+                <a href="https://its-harshit22.github.io/ChatBot/" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Notes App</h3>
+                <p>Created a local storage-based notes app for efficient data saving and retrieval.</p>
+                <a href="https://its-harshit22.github.io/NotesMake/" target="_blank">View Project</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="dsa" class="section">
+    <div class="container">
+        <h2>Problem Solving</h2>
+        <p>Solved 300+ problems on LeetCode covering Arrays, DP, Graphs.</p>
+        <a href="https://leetcode.com/u/harshit-kushwah/" target="_blank" class="btn">View LeetCode</a>
+    </div>
+</section>
+
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Email: harshit@example.com</p>
+        <p>
+            <a href="https://github.com/its-harshit22" target="_blank">GitHub</a> |
+            <a href="https://leetcode.com/u/harshit-kushwah/" target="_blank">LeetCode</a>
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Harshit Kushwah. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
