@@ -170,6 +170,76 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 4rem
   .resume-banner{flex-direction:column;text-align:center}
   .hero-stats{gap:2rem}
 }
+
+  .typed-cursor{color:var(--accent);animation:blink 0.7s infinite;font-weight:300}
+
+  /* ANIMATED COLOR SHIFT */
+  @keyframes colorShift {
+    0%   { color: #00ff88; }
+    20%  { color: #00c4ff; }
+    40%  { color: #a855f7; }
+    60%  { color: #f97316; }
+    80%  { color: #ec4899; }
+    100% { color: #00ff88; }
+  }
+  @keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Hero last name - animated gradient */
+  .hero-name .last {
+    background: linear-gradient(90deg, #00ff88, #00c4ff, #a855f7, #f97316, #ec4899, #00ff88);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  /* Accent elements color shift */
+  .hero-tag { animation: colorShift 8s ease infinite; }
+  .hero-role { animation: colorShift 8s ease infinite 1s; }
+  .section-label { animation: colorShift 8s ease infinite 2s; }
+  .nav-logo { animation: colorShift 8s ease infinite 0.5s; }
+  .term-cursor { animation: blink 1s infinite, colorShift 8s ease infinite; }
+  .typed-cursor { animation: blink 0.7s infinite, colorShift 8s ease infinite; }
+
+  /* Glowing pulse on hero tag dot */
+  @keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 4px #00ff88, 0 0 8px #00ff88; background: #00ff88; }
+    25%      { box-shadow: 0 0 4px #00c4ff, 0 0 8px #00c4ff; background: #00c4ff; }
+    50%      { box-shadow: 0 0 4px #a855f7, 0 0 8px #a855f7; background: #a855f7; }
+    75%      { box-shadow: 0 0 4px #f97316, 0 0 8px #f97316; background: #f97316; }
+  }
+  .hero-tag::before { animation: glowPulse 4s ease infinite !important; }
+
+  /* Timeline dots glow */
+  .tl-dot {
+    animation: glowPulse 4s ease infinite;
+  }
+
+  /* Skill tags hover color shift */
+  .skill-tag:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    transition: all 0.3s;
+  }
+
+  /* Nav cta animated border */
+  @keyframes borderShift {
+    0%,100% { border-color: #00ff88; color: #00ff88; }
+    33%      { border-color: #00c4ff; color: #00c4ff; }
+    66%      { border-color: #a855f7; color: #a855f7; }
+  }
+  .nav-cta { animation: borderShift 6s ease infinite; }
+
+  /* Stat numbers */
+  .stat-num { animation: colorShift 8s ease infinite 1.5s; }
+
+  /* DSA numbers */
+  .dsa-num { animation: colorShift 8s ease infinite 2s; }
 </style>
 </head>
 <body>
@@ -184,7 +254,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 4rem
     <li><a href="#dsa">dsa</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
-  <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Resume.pdf" download="Resume.pdf" target="_blank" class="nav-cta">&#11015; resume</a>
+  <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Harshit_Kushwah_Resume.pdf" download="Harshit_Kushwah_Resume.pdf" target="_blank" class="nav-cta">&#11015; resume</a>
 </nav>
 
 <!-- HERO -->
@@ -193,12 +263,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 4rem
   <div class="hero-content">
     <div class="hero-tag reveal d1">available for internships &amp; opportunities</div>
     <div class="hero-name reveal d2"><div class="first">Harshit</div><div class="last">Kushwah</div></div>
-    <div class="hero-role reveal d3">&gt; Full Stack Developer &amp; DSA Enthusiast</div>
+    <div class="hero-role reveal d3">&gt; <span id="typed-text"></span><span class="typed-cursor">|</span></div>
     <p class="hero-desc reveal d4">B.Tech CSE @ SISTec, Bhopal &middot; CGPA 8.15 &middot; Google Cloud Co-Lead at GDG SISTec. I build scalable web apps with the MERN stack and solve complex problems in C++.</p>
     <div class="hero-btns reveal d5">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-secondary">Get In Touch</a>
-      <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Resume.pdf" download="Resume.pdf" target="_blank" class="btn-resume">&#11015; Download Resume</a>
+      <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Harshit_Kushwah_Resume.pdf" download="Harshit_Kushwah_Resume.pdf" target="_blank" class="btn-resume">&#11015; Download Resume</a>
     </div>
     <div class="hero-stats reveal d6">
       <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">LC problems</div></div>
@@ -255,10 +325,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 4rem
       </div>
       <div class="resume-banner reveal-right d2">
         <div class="rb-text">
-          <strong>&#128196; Resume.pdf</strong>
+          <strong>&#128196; Harshit_Kushwah_Resume.pdf</strong>
           <span>Updated &middot; Hosted on GitHub</span>
         </div>
-        <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Resume.pdf" download="Resume.pdf" target="_blank" class="btn-dl">&#11015; Download</a>
+        <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Harshit_Kushwah_Resume.pdf" download="Harshit_Kushwah_Resume.pdf" target="_blank" class="btn-dl">&#11015; Download</a>
       </div>
     </div>
   </div>
@@ -411,7 +481,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 4rem
     <p>I'm open to internships, part-time roles, and collaborative projects. Whether you have an opportunity or just want to connect &mdash; my inbox is always open.</p>
     <div class="contact-btns">
       <a href="mailto:kushwahharshit22@gmail.com" class="btn-primary">Say Hello &#128075;</a>
-      <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Resume.pdf" download="Resume.pdf" target="_blank" class="btn-resume">&#11015; Download Resume</a>
+      <a href="https://github.com/its-harshit22/Current_Resume/raw/main/Harshit_Kushwah_Resume.pdf" download="Harshit_Kushwah_Resume.pdf" target="_blank" class="btn-resume">&#11015; Download Resume</a>
     </div>
     <div class="contact-links">
       <a href="mailto:kushwahharshit22@gmail.com" class="contact-link">&#9993; Email</a>
@@ -448,8 +518,9 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.bar-fill').forEach(bar => {
-        bar.style.background = bar.style.background || 'var(--accent)';
+      entry.target.querySelectorAll('.bar-fill').forEach((bar, i) => {
+        const colors = ['#00ff88','#00c4ff','#a855f7','#f97316'];
+        bar.style.background = colors[i % colors.length];
         bar.style.width = bar.dataset.w;
       });
     } else {
@@ -476,6 +547,46 @@ const onScroll = () => {
   });
 };
 window.addEventListener('scroll', onScroll, { passive: true });
+
+// TYPING ANIMATION
+const typedEl = document.getElementById('typed-text');
+const phrases = [
+  'Full Stack Developer',
+  'DSA Enthusiast',
+  'C++ Problem Solver',
+  'MERN Stack Dev',
+  'Google Cloud Lead',
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingTimeout;
+
+function type() {
+  const current = phrases[phraseIndex];
+  if (isDeleting) {
+    typedEl.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typedEl.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let speed = isDeleting ? 50 : 90;
+
+  if (!isDeleting && charIndex === current.length) {
+    speed = 1800; // pause at end
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    speed = 300; // pause before next
+  }
+
+  typingTimeout = setTimeout(type, speed);
+}
+
+type();
 </script>
 </body>
 </html>
