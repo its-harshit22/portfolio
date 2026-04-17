@@ -240,9 +240,54 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2rem 4rem
 
   /* DSA numbers */
   .dsa-num { animation: colorShift 8s ease infinite 2s; }
+
+  /* INTRO OVERLAY */
+  #intro-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #intro-overlay.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #intro-box {
+    font-family: 'Fira Code', monospace;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    width: min(520px, 90vw);
+  }
+  .intro-line {
+    color: #00ff88;
+    margin-bottom: 0.6rem;
+    min-height: 1.4em;
+    white-space: pre;
+  }
+  .intro-line .dim  { color: #334155; }
+  .intro-line .warn { color: #f97316; }
+  .intro-line .info { color: #00c4ff; }
+  .intro-line .bold { color: #fff; font-weight: 600; }
+  .intro-line .red  { color: #ef4444; }
+  .ic { display:inline-block; animation: blink 0.6s infinite; }
 </style>
 </head>
 <body>
+<!-- INTRO OVERLAY -->
+<div id="intro-overlay">
+  <div id="intro-box">
+    <div class="intro-line" id="il1"></div>
+    <div class="intro-line" id="il2"></div>
+    <div class="intro-line" id="il3"></div>
+    <div class="intro-line" id="il4"></div>
+    <div class="intro-line" id="il5"></div>
+    <div class="intro-line" id="il6"></div>
+  </div>
+</div>
+
 
 <nav>
   <div class="nav-logo"><span>~/</span>harshit-kushwah</div>
@@ -587,6 +632,60 @@ function type() {
 }
 
 type();
+
+// INTRO ANIMATION
+(function(){
+  document.body.style.overflow = 'hidden';
+  const lines = [
+    { el: 'il1', text: 'root@dev:~$ <span class="dim">./init_portfolio.sh</span>',            delay: 200,  duration: 60  },
+    { el: 'il2', text: '<span class="warn">&#9679; LOADING HARSHIT KUSHWAH...</span>',         delay: 900,  duration: 50  },
+    { el: 'il3', text: '<span class="info">&#10003; fetching projects........... done</span>', delay: 1600, duration: 40  },
+    { el: 'il4', text: '<span class="info">&#10003; loading skills.............. done</span>', delay: 2300, duration: 40  },
+    { el: 'il5', text: '<span class="bold">&#9646;&#9646;&#9646;&#9646;&#9646;&#9646;&#9646;&#9646;&#9646;&#9646; 100%  ACCESS GRANTED &#128275;</span>', delay: 3000, duration: 35  },
+    { el: 'il6', text: '<span style="color:#00ff88;font-size:1.3em;letter-spacing:2px;">&#9608; WELCOME TO MY PORTFOLIO &#9608;</span>', delay: 3800, duration: 30  },
+  ];
+
+  function typeInto(elId, html, charDelay, onDone) {
+    const el = document.getElementById(elId);
+    // strip tags to get plain text length, but inject full HTML at end
+    const plain = html.replace(/<[^>]+>/g, '');
+    let i = 0;
+    // show cursor while typing
+    el.innerHTML = '<span class="ic">&#9646;</span>';
+    const iv = setInterval(() => {
+      i++;
+      // reveal progressively by slicing plain text and appending html at end
+      el.innerHTML = plain.substring(0, i) + '<span class="ic">&#9646;</span>';
+      if (i >= plain.length) {
+        clearInterval(iv);
+        el.innerHTML = html; // show full styled html
+        if (onDone) onDone();
+      }
+    }, charDelay);
+  }
+
+  function runLines(index) {
+    if (index >= lines.length) {
+      // all done — fade out overlay
+      setTimeout(() => {
+        document.getElementById('intro-overlay').classList.add('hide');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          document.getElementById('intro-overlay').style.display = 'none';
+        }, 900);
+      }, 600);
+      return;
+    }
+    const line = lines[index];
+    setTimeout(() => {
+      typeInto(line.el, line.text, line.duration, () => runLines(index + 1));
+    }, index === 0 ? line.delay : 0);
+  }
+
+  // slight delay then kick off
+  setTimeout(() => runLines(0), 300);
+})();
+
 </script>
 </body>
 </html>
